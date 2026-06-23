@@ -6589,11 +6589,6 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDplayerObjects1Objects, gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDNewTiledSprite5Objects1Objects, false, runtimeScene, false);
 if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-{isConditionTrue_0 = (runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber() == 21);
-}
-}
-if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "win", false);
 }
 }
