@@ -5058,7 +5058,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDplayerObjects1Objects, gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDmonster1Objects1Objects, false, runtimeScene, false);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15625748);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(14651260);
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
@@ -5118,7 +5118,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDplayerObjects1Objects, gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDmonster2Objects1Objects, false, runtimeScene, false);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15628748);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(11664916);
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
@@ -5178,7 +5178,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDplayerObjects1Objects, gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDmonster3Objects1Objects, false, runtimeScene, false);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15631764);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(14213652);
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
@@ -5239,7 +5239,7 @@ isConditionTrue_0 = false;
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15634772);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(18844884);
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
@@ -5301,7 +5301,23 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "發射冷卻") >= 0.3;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtsExt__Gamepads__IsButtonJustPressed.func(runtimeScene, 1, "Y", null);
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Numpad1");
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtsExt__Gamepads__IsButtonJustPressed.func(runtimeScene, 1, "Y", null);
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("player"), gdjs.game01Code.GDplayerObjects1);
@@ -5443,7 +5459,23 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "發射冷卻") >= 0.3;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtsExt__Gamepads__IsButtonJustPressed.func(runtimeScene, 1, "B", null);
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Numpad2");
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtsExt__Gamepads__IsButtonJustPressed.func(runtimeScene, 1, "B", null);
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("player"), gdjs.game01Code.GDplayerObjects1);
@@ -5557,7 +5589,23 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "發射冷卻") >= 0.3;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtsExt__Gamepads__IsButtonJustPressed.func(runtimeScene, 1, "X", null);
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+isConditionTrue_1 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Numpad3");
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtsExt__Gamepads__IsButtonJustPressed.func(runtimeScene, 1, "X", null);
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
+}
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("player"), gdjs.game01Code.GDplayerObjects1);
@@ -5907,7 +5955,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDplayerObjects1Objects, gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDmonster2bulletObjects1Objects, false, runtimeScene, false);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15788828);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15664316);
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
@@ -6588,6 +6636,11 @@ gdjs.copyArray(runtimeScene.getObjects("player"), gdjs.game01Code.GDplayerObject
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDplayerObjects1Objects, gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDNewTiledSprite5Objects1Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = (runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber() == 21);
+}
+}
 if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "win", false);
 }

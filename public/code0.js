@@ -105,7 +105,7 @@ gdjs.copyArray(runtimeScene.getObjects("ClearText"), gdjs.startCode.GDClearTextO
     gdjs.startCode.GDClearTextObjects1[i].getBehavior("Text").setText("完成次數" + runtimeScene.getGame().getVariables().getFromIndex(0).getAsString());
 }
 }
-{gdjs.evtTools.network.sendAsyncRequest("https://math-opyu.onrender.com", "", "GET", "", gdjs.VariablesContainer.badVariable, gdjs.VariablesContainer.badVariable);
+{gdjs.evtTools.network.sendAsyncRequest("https://math-opyu.onrender.com/api/clears", "", "GET", "", gdjs.VariablesContainer.badVariable, gdjs.VariablesContainer.badVariable);
 }
 }
 

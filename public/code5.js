@@ -26,7 +26,7 @@ if (isConditionTrue_0) {
 }
 {gdjs.evtTools.storage.writeNumberInJSONFile("ClearTimes", "abc", runtimeScene.getGame().getVariables().getFromIndex(0).getAsNumber());
 }
-{gdjs.evtTools.network.sendAsyncRequest("https://math-opyu.onrender.com", "", "POST", "", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1));
+{gdjs.evtTools.network.sendAsyncRequest("https://math-opyu.onrender.com/api/clear", "", "POST", "", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1));
 }
 }
 
