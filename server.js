@@ -1,37 +1,28 @@
-const express = require("express");
-const cors = require("cors"); 
-const server = express();
+const express = require('express');
+const cors = require('cors');
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-const PORT = process.env.PORT || 8080;
+app.use(cors()); // 允許 GDevelop 從不同網域傳送資料
+app.use(express.json());
 
-server.use(cors()); 
-server.use(express.json());
-server.use(express.urlencoded({ extended: true }));
-
-// ⭐ 關鍵：加入這行（確保這行在下面的路由之前）
+// 讓 Express 自動將 "public" 資料夾變成公開的靜態網頁伺服器
 server.use(express.static("public"));
 
-let globalClearCount = 0;
+// 記憶體暫存（注意：重啟伺服器資料會消失，正式上線建議搭配資料庫如 MongoDB 或 PostgreSQL）
+let levelClearCount = 0;
 
-// 注意：因為上面啟用了靜態資料夾，如果 public 裡面有 index.html，
-// 這裡的 server.get("/") 就會被 index.html 取代，這正是我們想要的！
-// 如果你想保留測試，可以把這個首頁路由註解掉或刪除。
-/*
-server.get("/", function(req, res){
-    res.send("Server is alive!");
-});
-*/
-
-server.get("/getScore", (req, res) => {
-    res.json({ count: globalClearCount });
+// 路由 1：獲取目前過關次數
+app.get('/api/clears', (req, res) => {
+    res.json({ count: levelClearCount });
 });
 
-server.post("/upScore", (req, res) => {
-    globalClearCount += 1;
-    console.log(`有人過關了！目前總過關次數：${globalClearCount}`);
-    res.json({ message: "Score updated successfully", count: globalClearCount });
+// 路由 2：增加過關次數（當玩家過關時呼叫）
+app.post('/api/clear', (req, res) => {
+    levelClearCount += 1;
+    res.json({ message: "Success", count: levelClearCount });
 });
 
-server.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}.`);
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
