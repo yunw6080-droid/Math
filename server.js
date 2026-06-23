@@ -11,16 +11,27 @@ server.use(express.static("public"));
 
 // 記憶體暫存（注意：重啟伺服器資料會消失，正式上線建議搭配資料庫如 MongoDB 或 PostgreSQL）
 let levelClearCount = 0;
+let globalAttackCount = 0;
 
 // 路由 1：獲取目前過關次數
 app.get('/api/clears', (req, res) => {
-    res.json({ count: levelClearCount });
+    res.json({
+        count: levelClearCount,
+        attackCount: globalAttackCount
+    });
 });
 
 // 路由 2：增加過關次數（當玩家過關時呼叫）
 app.post('/api/clear', (req, res) => {
     levelClearCount += 1;
+    console.log(`總過關：${levelClearCount}，總攻擊：${globalAttackCount}`);
     res.json({ message: "Success", count: levelClearCount });
+});
+
+app.post('/api/attack', (req, res) => {
+    globalAttackCount += 1;
+    console.log(`有人攻擊！總過關：${levelClearCount}，總攻擊：${globalAttackCount}`);
+    res.json({ message: "Success", attackCount: globalAttackCount });
 });
 
 app.listen(PORT, () => {
