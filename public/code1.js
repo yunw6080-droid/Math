@@ -179,11 +179,23 @@ if(isConditionTrue_1) {
 }
 }
 {
+isConditionTrue_1 = gdjs.evtTools.input.anyKeyPressed(runtimeScene);
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+isConditionTrue_1 = gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left");
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
 }
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15579284);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15556724);
 }
 }
 }

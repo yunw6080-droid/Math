@@ -5058,7 +5058,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDplayerObjects1Objects, gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDmonster1Objects1Objects, false, runtimeScene, false);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15648308);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15625748);
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
@@ -5118,7 +5118,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDplayerObjects1Objects, gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDmonster2Objects1Objects, false, runtimeScene, false);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15651308);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15628748);
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
@@ -5178,7 +5178,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDplayerObjects1Objects, gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDmonster3Objects1Objects, false, runtimeScene, false);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15654324);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15631764);
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
@@ -5239,7 +5239,7 @@ isConditionTrue_0 = false;
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15657332);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15634772);
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
@@ -5907,7 +5907,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDplayerObjects1Objects, gdjs.game01Code.mapOfGDgdjs_9546game01Code_9546GDmonster2bulletObjects1Objects, false, runtimeScene, false);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15811388);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15788828);
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
