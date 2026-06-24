@@ -4,8 +4,39 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 app.use(cors()); 
-app.use(express.json());
+app.use(express.json({
+    verify: (req, res, buf) => { req.rawBody = buf.toString('utf8'); }
+}));
+app.use(express.urlencoded({
+    extended: true,
+    verify: (req, res, buf) => { req.rawBody = buf.toString('utf8'); }
+}));
 app.use(express.static("public"));
+
+function parseAttackTimes(body, rawBody) {
+    if (body && typeof body === 'object' && body.attackTimes !== undefined) {
+        const n = parseInt(body.attackTimes, 10);
+        if (!isNaN(n)) return n;
+    }
+    const candidates = [];
+    if (typeof rawBody === 'string' && rawBody.length > 0) candidates.push(rawBody);
+    if (typeof body === 'string' && body.length > 0) candidates.push(body);
+    for (const key of Object.keys(body || {})) {
+        if (key.includes('attackTimes')) candidates.push(key);
+    }
+    for (const text of candidates) {
+        try {
+            const n = parseInt(JSON.parse(text).attackTimes, 10);
+            if (!isNaN(n)) return n;
+        } catch {}
+        const match = String(text).match(/attackTimes["']?\s*:\s*(\d+)/);
+        if (match) {
+            const n = parseInt(match[1], 10);
+            if (!isNaN(n)) return n;
+        }
+    }
+    return NaN;
+}
 
 // 記憶體暫存
 let levelClearCount = 0;
@@ -24,8 +55,7 @@ app.get('/api/clears', (req, res) => {
 app.post('/api/clear', (req, res) => {
     levelClearCount += 1;
     
-    // 💡 安全防禦：強制轉換成十進位整數數字，防止 GDevelop 傳來字串型態導致比大小失敗
-    const currentAttack = parseInt(req.body.attackTimes, 10); 
+    const currentAttack = parseAttackTimes(req.body, req.rawBody); 
 
     if (isNaN(currentAttack)) {
         console.log("⚠️ 警告：收到不正確的攻擊次數型態（非數字）！");

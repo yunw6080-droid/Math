@@ -100,10 +100,24 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
+{runtimeScene.getGame().getVariables().getFromIndex(1).setString("");
+}
+{gdjs.evtTools.network.sendAsyncRequest("https://math-opyu.onrender.com/api/clears", "", "GET", "", runtimeScene.getGame().getVariables().getFromIndex(1), gdjs.VariablesContainer.badVariable);
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.string.strFind(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(1)), "clearCount") != -1;
+if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("BestAttackText"), gdjs.startCode.GDBestAttackTextObjects1);
 gdjs.copyArray(runtimeScene.getObjects("ClearText"), gdjs.startCode.GDClearTextObjects1);
-{gdjs.evtTools.network.sendAsyncRequest("https://math-opyu.onrender.com/api/clears", "", "GET", "", runtimeScene.getScene().getVariables().getFromIndex(3), gdjs.VariablesContainer.badVariable);
-}
 {gdjs.evtTools.network.jsonToVariableStructure(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(1)), runtimeScene.getGame().getVariables().getFromIndex(2));
 }
 {for(var i = 0, len = gdjs.startCode.GDClearTextObjects1.length ;i < len;++i) {
