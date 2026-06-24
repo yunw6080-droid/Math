@@ -5327,7 +5327,7 @@ gdjs.copyArray(runtimeScene.getObjects("player"), gdjs.game01Code.GDplayerObject
 }
 {runtimeScene.getScene().getVariables().getFromIndex(0).setNumber(gdjs.randomInRange(0, 3));
 }
-{runtimeScene.getGame().getVariables().getFromIndex(1).add(1);
+{runtimeScene.getGame().getVariables().getFromIndex(0).add(1);
 }
 
 { //Subevents
@@ -5487,7 +5487,7 @@ gdjs.copyArray(runtimeScene.getObjects("player"), gdjs.game01Code.GDplayerObject
 }
 {runtimeScene.getScene().getVariables().getFromIndex(0).setNumber(gdjs.randomInRange(4, 6));
 }
-{runtimeScene.getGame().getVariables().getFromIndex(1).add(1);
+{runtimeScene.getGame().getVariables().getFromIndex(0).add(1);
 }
 
 { //Subevents
@@ -5619,7 +5619,7 @@ gdjs.copyArray(runtimeScene.getObjects("player"), gdjs.game01Code.GDplayerObject
 }
 {runtimeScene.getScene().getVariables().getFromIndex(0).setNumber(gdjs.randomInRange(7, 8));
 }
-{runtimeScene.getGame().getVariables().getFromIndex(1).add(1);
+{runtimeScene.getGame().getVariables().getFromIndex(0).add(1);
 }
 
 { //Subevents
@@ -6639,7 +6639,7 @@ isConditionTrue_0 = false;
 }
 }
 if (isConditionTrue_0) {
-{gdjs.evtTools.network.sendAsyncRequest("https://math-opyu.onrender.com/api/clear", "{\"attackTimes\": " + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(1))) + "}", "POST", "", gdjs.VariablesContainer.badVariable, gdjs.VariablesContainer.badVariable);
+{gdjs.evtTools.network.sendAsyncRequest("https://math-opyu.onrender.com/api/clear", "{\"attackTimes\": " + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(0))) + "}", "POST", "", gdjs.VariablesContainer.badVariable, gdjs.VariablesContainer.badVariable);
 }
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "win", false);
 }

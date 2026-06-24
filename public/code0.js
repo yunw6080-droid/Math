@@ -104,14 +104,14 @@ gdjs.copyArray(runtimeScene.getObjects("BestAttackText"), gdjs.startCode.GDBestA
 gdjs.copyArray(runtimeScene.getObjects("ClearText"), gdjs.startCode.GDClearTextObjects1);
 {gdjs.evtTools.network.sendAsyncRequest("https://math-opyu.onrender.com/api/clears", "", "GET", "", runtimeScene.getScene().getVariables().getFromIndex(3), gdjs.VariablesContainer.badVariable);
 }
-{gdjs.evtTools.network.jsonToVariableStructure(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)), runtimeScene.getGame().getVariables().getFromIndex(3));
+{gdjs.evtTools.network.jsonToVariableStructure(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(1)), runtimeScene.getGame().getVariables().getFromIndex(2));
 }
 {for(var i = 0, len = gdjs.startCode.GDClearTextObjects1.length ;i < len;++i) {
-    gdjs.startCode.GDClearTextObjects1[i].getBehavior("Text").setText("全服總通關次數：" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(3).getChild("clearCount"))));
+    gdjs.startCode.GDClearTextObjects1[i].getBehavior("Text").setText("總通關次數：" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(2).getChild("clearCount"))));
 }
 }
 {for(var i = 0, len = gdjs.startCode.GDBestAttackTextObjects1.length ;i < len;++i) {
-    gdjs.startCode.GDBestAttackTextObjects1[i].getBehavior("Text").setText("歷史最佳最少攻擊紀錄：" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(3).getChild("bestAttack"))) + " 次");
+    gdjs.startCode.GDBestAttackTextObjects1[i].getBehavior("Text").setText("歷史最佳最少攻擊紀錄：" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(2).getChild("bestAttack"))) + " 次");
 }
 }
 }

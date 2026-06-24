@@ -22,7 +22,7 @@ isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, "3秒");
 }
-{runtimeScene.getGame().getVariables().getFromIndex(1).setNumber(0);
+{runtimeScene.getGame().getVariables().getFromIndex(0).setNumber(0);
 }
 }
 
