@@ -102,7 +102,7 @@ isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("BestAttackText"), gdjs.startCode.GDBestAttackTextObjects1);
 gdjs.copyArray(runtimeScene.getObjects("ClearText"), gdjs.startCode.GDClearTextObjects1);
-{gdjs.evtTools.network.sendAsyncRequest("/api/clears", "", "GET", "", runtimeScene.getScene().getVariables().getFromIndex(3), gdjs.VariablesContainer.badVariable);
+{gdjs.evtTools.network.sendAsyncRequest("https://math-opyu.onrender.com/api/clears", "", "GET", "", runtimeScene.getScene().getVariables().getFromIndex(3), gdjs.VariablesContainer.badVariable);
 }
 {gdjs.evtTools.network.jsonToVariableStructure(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)), runtimeScene.getGame().getVariables().getFromIndex(3));
 }
