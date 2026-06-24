@@ -59,6 +59,32 @@ if (isConditionTrue_0) {
 }
 
 
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Home"), gdjs._49Code.GDHomeObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "3秒") >= 3;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs._49Code.GDHomeObjects1.length;i<l;++i) {
+    if ( gdjs._49Code.GDHomeObjects1[i].IsClicked(null) ) {
+        isConditionTrue_0 = true;
+        gdjs._49Code.GDHomeObjects1[k] = gdjs._49Code.GDHomeObjects1[i];
+        ++k;
+    }
+}
+gdjs._49Code.GDHomeObjects1.length = k;
+}
+if (isConditionTrue_0) {
+{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "start", false);
+}
+}
+
+}
+
+
 };
 
 gdjs._49Code.func = function(runtimeScene) {

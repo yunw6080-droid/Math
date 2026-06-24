@@ -67,6 +67,9 @@ gdjs.copyArray(runtimeScene.getObjects("Home"), gdjs.winCode.GDHomeObjects1);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "3秒") >= 3;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
 for (var i = 0, k = 0, l = gdjs.winCode.GDHomeObjects1.length;i<l;++i) {
     if ( gdjs.winCode.GDHomeObjects1[i].IsClicked(null) ) {
         isConditionTrue_0 = true;
@@ -75,6 +78,7 @@ for (var i = 0, k = 0, l = gdjs.winCode.GDHomeObjects1.length;i<l;++i) {
     }
 }
 gdjs.winCode.GDHomeObjects1.length = k;
+}
 if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "start", false);
 }
