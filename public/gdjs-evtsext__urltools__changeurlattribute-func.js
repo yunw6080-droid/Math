@@ -9,7 +9,7 @@ gdjs.evtsExt__URLTools__ChangeURLAttribute = {};
 gdjs.evtsExt__URLTools__ChangeURLAttribute.idToCallbackMap = new Map();
 
 
-gdjs.evtsExt__URLTools__ChangeURLAttribute.userFunc0x964450 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__URLTools__ChangeURLAttribute.userFunc0x860ff0 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 const url = new URL(eventsFunctionContext.getArgument("URL"));
 url[eventsFunctionContext.getArgument("part")] = eventsFunctionContext.getArgument("val");
@@ -21,7 +21,7 @@ gdjs.evtsExt__URLTools__ChangeURLAttribute.eventsList0 = function(runtimeScene, 
 {
 
 
-gdjs.evtsExt__URLTools__ChangeURLAttribute.userFunc0x964450(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__URLTools__ChangeURLAttribute.userFunc0x860ff0(runtimeScene, eventsFunctionContext);
 
 }
 

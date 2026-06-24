@@ -107,13 +107,23 @@ gdjs.copyArray(runtimeScene.getObjects("ClearText"), gdjs.startCode.GDClearTextO
 {gdjs.evtTools.network.jsonToVariableStructure(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(1)), runtimeScene.getGame().getVariables().getFromIndex(2));
 }
 {for(var i = 0, len = gdjs.startCode.GDClearTextObjects1.length ;i < len;++i) {
-    gdjs.startCode.GDClearTextObjects1[i].getBehavior("Text").setText("總通關次數：" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(2).getChild("clearCount"))));
+    gdjs.startCode.GDClearTextObjects1[i].getBehavior("Text").setText("總通關次數：" + gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2).getChild("clearCount")));
 }
 }
 {for(var i = 0, len = gdjs.startCode.GDBestAttackTextObjects1.length ;i < len;++i) {
-    gdjs.startCode.GDBestAttackTextObjects1[i].getBehavior("Text").setText("歷史最佳最少攻擊紀錄：" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(2).getChild("bestAttack"))) + " 次");
+    gdjs.startCode.GDBestAttackTextObjects1[i].getBehavior("Text").setText("最佳最少攻擊紀錄：" + gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2).getChild("bestAttack")) + " 次");
 }
 }
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+{
 }
 
 }
