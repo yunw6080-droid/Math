@@ -1,37 +1,44 @@
 const express = require('express');
-const cors = require('cors');
+const cors = require('cors'); 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
-app.use(cors()); // 允許 GDevelop 從不同網域傳送資料
+app.use(cors()); 
 app.use(express.json());
+app.use(express.static("public"));
 
-// 讓 Express 自動將 "public" 資料夾變成公開的靜態網頁伺服器
-server.use(express.static("public"));
-
-// 記憶體暫存（注意：重啟伺服器資料會消失，正式上線建議搭配資料庫如 MongoDB 或 PostgreSQL）
+// 記憶體暫存
 let levelClearCount = 0;
-let globalAttackCount = 0;
+let minAttackCount = null; // ⭐ 預設為 null，代表還沒有人過關過
 
-// 路由 1：獲取目前過關次數
+// 路由 1：獲取目前數據（過關次數 + 歷史最少攻擊次數）
 app.get('/api/clears', (req, res) => {
-    res.json({
-        count: levelClearCount,
-        attackCount: globalAttackCount
+    res.json({ 
+        clearCount: levelClearCount,
+        bestAttack: minAttackCount === null ? 0 : minAttackCount // 如果是 null 就顯示 0
     });
 });
 
-// 路由 2：增加過關次數（當玩家過關時呼叫）
+// 路由 2：當玩家過關時呼叫（同時傳入這次的攻擊次數）
 app.post('/api/clear', (req, res) => {
     levelClearCount += 1;
-    console.log(`總過關：${levelClearCount}，總攻擊：${globalAttackCount}`);
-    res.json({ message: "Success", count: levelClearCount });
-});
+    
+    // 從 GDevelop 傳過來的 JSON 資料中，取出這次的攻擊次數
+    const currentAttack = Number(req.body.attackTimes); 
 
-app.post('/api/attack', (req, res) => {
-    globalAttackCount += 1;
-    console.log(`有人攻擊！總過關：${levelClearCount}，總攻擊：${globalAttackCount}`);
-    res.json({ message: "Success", attackCount: globalAttackCount });
+    // ⭐ 核心邏輯：比對是否為「最少攻擊次數」
+    if (minAttackCount === null || currentAttack < minAttackCount) {
+        minAttackCount = currentAttack; // 更新歷史最佳紀錄
+        console.log(`🎉 產生新的最佳紀錄！最少攻擊次數變為：${minAttackCount}`);
+    }
+
+    console.log(`有人過關！總過關：${levelClearCount}，本次攻擊：${currentAttack}，歷史最佳：${minAttackCount}`);
+    
+    res.json({ 
+        message: "Success", 
+        clearCount: levelClearCount,
+        bestAttack: minAttackCount
+    });
 });
 
 app.listen(PORT, () => {
