@@ -15,6 +15,8 @@ gdjs.startCode.GDNewText3Objects1= [];
 gdjs.startCode.GDNewText3Objects2= [];
 gdjs.startCode.GDClearTextObjects1= [];
 gdjs.startCode.GDClearTextObjects2= [];
+gdjs.startCode.GDBestAttackTextObjects1= [];
+gdjs.startCode.GDBestAttackTextObjects2= [];
 
 
 gdjs.startCode.eventsList0 = function(runtimeScene) {
@@ -98,14 +100,19 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("BestAttackText"), gdjs.startCode.GDBestAttackTextObjects1);
 gdjs.copyArray(runtimeScene.getObjects("ClearText"), gdjs.startCode.GDClearTextObjects1);
-{gdjs.evtTools.storage.readNumberFromJSONFile("ClearTimes", "abc", runtimeScene, runtimeScene.getGame().getVariables().getFromIndex(0));
+{gdjs.evtTools.network.sendAsyncRequest("/api/clears", "", "GET", "", runtimeScene.getScene().getVariables().getFromIndex(3), gdjs.VariablesContainer.badVariable);
+}
+{gdjs.evtTools.network.jsonToVariableStructure(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(2)), runtimeScene.getGame().getVariables().getFromIndex(3));
 }
 {for(var i = 0, len = gdjs.startCode.GDClearTextObjects1.length ;i < len;++i) {
-    gdjs.startCode.GDClearTextObjects1[i].getBehavior("Text").setText("完成次數" + runtimeScene.getGame().getVariables().getFromIndex(0).getAsString());
+    gdjs.startCode.GDClearTextObjects1[i].getBehavior("Text").setText("全服總通關次數：" + gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(3).getChild("clearCount")));
 }
 }
-{gdjs.evtTools.network.sendAsyncRequest("https://math-opyu.onrender.com/api/clears", "", "GET", "", gdjs.VariablesContainer.badVariable, gdjs.VariablesContainer.badVariable);
+{for(var i = 0, len = gdjs.startCode.GDBestAttackTextObjects1.length ;i < len;++i) {
+    gdjs.startCode.GDBestAttackTextObjects1[i].getBehavior("Text").setText("歷史最佳最少攻擊紀錄：" + gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(3).getChild("bestAttack")) + " 次");
+}
 }
 }
 
@@ -131,6 +138,8 @@ gdjs.startCode.GDNewText3Objects1.length = 0;
 gdjs.startCode.GDNewText3Objects2.length = 0;
 gdjs.startCode.GDClearTextObjects1.length = 0;
 gdjs.startCode.GDClearTextObjects2.length = 0;
+gdjs.startCode.GDBestAttackTextObjects1.length = 0;
+gdjs.startCode.GDBestAttackTextObjects2.length = 0;
 
 gdjs.startCode.eventsList0(runtimeScene);
 gdjs.startCode.GDStartObjects1.length = 0;
@@ -147,6 +156,8 @@ gdjs.startCode.GDNewText3Objects1.length = 0;
 gdjs.startCode.GDNewText3Objects2.length = 0;
 gdjs.startCode.GDClearTextObjects1.length = 0;
 gdjs.startCode.GDClearTextObjects2.length = 0;
+gdjs.startCode.GDBestAttackTextObjects1.length = 0;
+gdjs.startCode.GDBestAttackTextObjects2.length = 0;
 
 
 return;

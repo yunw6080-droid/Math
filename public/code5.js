@@ -22,11 +22,7 @@ isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, "3秒");
 }
-{runtimeScene.getGame().getVariables().getFromIndex(0).add(1);
-}
-{gdjs.evtTools.storage.writeNumberInJSONFile("ClearTimes", "abc", runtimeScene.getGame().getVariables().getFromIndex(0).getAsNumber());
-}
-{gdjs.evtTools.network.sendAsyncRequest("https://math-opyu.onrender.com/api/clear", "", "POST", "", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1));
+{runtimeScene.getGame().getVariables().getFromIndex(1).setNumber(0);
 }
 }
 
